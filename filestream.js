@@ -6,7 +6,6 @@ const getDownloadFilename = require('./filenameConverter').getDownloadFilename
 
 // just plain txt file
 server.on("request", (req, res) => {
-  // res.setHeader('Content-Type', 'multipart/formed-data')
   const parsed_url = url.parse(req.url)
   if (req.url == '/hello') { 
     res.setHeader('Content-disposition', 'attachment; filename=' + getDownloadFilename(req, '안녕.txt'))
